@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>San Pablo Ferretería - Catálogo</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>🛠️ Ferretería San Pablo</h1>
+        <nav>
+            <a href="admin.html">⚙️</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <!-- Carrusel de Destacados / Ofertas -->
+        <section class="carrusel" aria-label="Promociones y destacados">
+            <div class="carrusel-slides" id="carruselSlides">
+                <div class="slide">
+                    <img src="https://placehold.co/1100x320/1e293b/f59e0b?text=Herramientas+Electricas+en+Promo" alt="Herramientas eléctricas en promoción">
+                    <div class="slide-caption">
+                        <h2>Herramientas Eléctricas</h2>
+                        <p>Taladros, amoladoras y equipos listos para el trabajo pesado.</p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="https://placehold.co/1100x320/334155/fbbf24?text=Todo+en+Electricidad+y+Plomeria" alt="Materiales de electricidad y plomería">
+                    <div class="slide-caption">
+                        <h2>Electricidad y Plomería</h2>
+                        <p>Térmicas, cables, cañerías y accesorios de primera calidad.</p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="https://placehold.co/1100x320/0f172a/f59e0b?text=Pintureria+y+Herramientas+Manuales" alt="Pinturería y herramientas manuales">
+                    <div class="slide-caption">
+                        <h2>Pinturería y Manuales</h2>
+                        <p>Todo lo que necesitás para renovar o refaccionar tu casa.</p>
+                    </div>
+                </div>
+            </div>
+
+            <button type="button" class="carrusel-btn prev" id="btnPrev" aria-label="Anterior">‹</button>
+            <button type="button" class="carrusel-btn next" id="btnNext" aria-label="Siguiente">›</button>
+
+            <div class="carrusel-dots" id="carruselDots"></div>
+        </section>
+
+
+        <div class="filtros">
+            <input type="text" id="buscador" placeholder="Buscar herramienta, material...">
+            <select id="filtroCategoria">
+                <option value="Todas">Todas las categorías</option>
+                <option value="Electricidad">Electricidad</option>
+                <option value="Ferreteria">Ferreteria</option>
+                <option value="Refrigeracion">Refrigeracion</option>
+            </select>
+        </div>
+
+        <div id="catalogo" class="grid-productos">
+            <!-- Los productos se cargan dinámicamente aquí -->
+        </div>
+    </main>
+    <!-- Modal Detalle de Producto -->
+    <div id="modalProducto" class="modal-overlay" aria-hidden="true">
+        <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitulo">
+            <button type="button" id="cerrarModal" class="modal-close" aria-label="Cerrar ventana">&times;</button>
+            <div class="modal-body">
+                <img id="modalImg" src="" alt="">
+                <div class="modal-info">
+                    <span id="modalCategoria" class="badge"></span>
+                    <h2 id="modalTitulo"></h2>
+                    <p id="modalPrecio" class="precio"></p>
+                    <p id="modalStock" class="stock"></p>
+                    <a id="modalWhatsapp" href="#" target="_blank" rel="noopener noreferrer" class="btn-modal-ws">
+                        💬 Consultar por este producto
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3>🛠️ Ferretería San Pablo</h3>
+                <p>Herramientas, electricidad, plomería y materiales para tu obra o proyecto.</p>
+            </div>
+
+            <div class="footer-info">
+                <h4>Contacto y Ubicación</h4>
+                <p>📍 Lisandro de la Torre & Manuel Ledesma Gobernador Ingeniero Valentín Virasoro W3342</p>
+                <p>✉️ <a href="mailto:contacto@ferreteriaeltornillo.com">contacto@ferreteriaeltornillo.com</a></p>
+            </div>
+
+            <div class="footer-social">
+                <h4>Canales Directos</h4>
+                <div class="footer-links">
+                    <a href="https://wa.me/5493756431680?text=Hola!%20necesito%20saber%20" target="_blank" rel="noopener noreferrer">💬 WhatsApp</a>
+                    <a href="https://www.instagram.com/sanpabloferreteria/" target="_blank" rel="noopener noreferrer">📷 Instagram</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; <span id="anioActual"></span> Ferretería San Pablo. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="js/storage.js"></script>
+    <script src="js/store.js"></script>
+    <script>
+        document.getElementById('anioActual').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
+
+
+    <script src="js/storage.js"></script>
+    <script src="js/store.js"></script>
+</body>
+</html>

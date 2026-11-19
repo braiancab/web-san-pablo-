@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Ferretería El Tornillo</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>⚙️ Administración de Inventario</h1>
+        <nav>
+            <a href="index.html">← Volver a la Tienda</a>
+        </nav>
+    </header>
+
+    <main class="container admin-layout">
+        <!-- Formulario Alta / Edición -->
+        <section class="form-card">
+            <h2 id="formTitulo" style="margin-bottom: 1rem;">Nuevo Producto</h2>
+            <form id="productoForm">
+                <input type="hidden" id="productoId">
+                
+                <div class="form-group">
+                    <label for="nombre">Nombre del producto</label>
+                    <input type="text" id="nombre" required placeholder="Ej: Amoladora Angular 750W">
+                </div>
+
+                <div class="form-group">
+                    <label for="categoria">Categoría</label>
+                    <select id="categoria" required>
+                        <option value="Electricidad">Electricidad</option>
+                        <option value="Ferreteria">Ferreteria</option>
+                        <option value="Refrigeracion">Refrigeracion</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="precio">Precio ($)</label>
+                    <input type="number" id="precio" min="0" step="0.01" required>
+                </div>
+                <div class="form-group">
+                    <label for="imagen">Imagen del producto</label>
+                    <input type="file" id="imagen" accept="image/*">
+                    <small style="color: #64748b; display: block; margin-top: 4px;">
+                        Si editas y no eliges foto, se mantiene la actual.
+                    </small>
+                </div>
+
+                <button type="submit" class="btn btn-primary" id="btnGuardar">Guardar Producto</button>
+                <button type="button" class="btn btn-secondary" id="btnCancelar" style="display: none;">Cancelar Edición</button>
+            </form>
+        </section>
+
+        <!-- Tabla de Productos -->
+        <section class="tabla-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Img</th>
+                        <th>Producto</th>
+                        <th>Categoría</th>
+                        <th>Precio</th>
+                        <th>Stock</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="tablaProductos">
+                    <!-- Filas dinámicas -->
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <script src="js/storage.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+</html>
